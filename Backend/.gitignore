@@ -10,3 +10,8 @@
 
 # Built Visual Studio Code Extensions
 *.vsix
+
+node_modules 
+
+#Config files 
+firebase_config.js
