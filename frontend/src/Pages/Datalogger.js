@@ -88,7 +88,7 @@ function Datalogger() {
         <div>
             <Header />
             <div class="flex-col w-screen h-screen ">
-                <form class="flex flex-col bg-blue-500 items-center" onSubmit={submitHandler}>
+                <form class="flex flex-col bg-red-200 items-center p-4" onSubmit={submitHandler}>
                     <label>Make</label>
                     <select class="w-32 mb-2" value={make} onChange={makeHandler}>
                         <option value="-">-</option>
@@ -103,7 +103,7 @@ function Datalogger() {
                     <input class="w-32 mb-2" value={week} onChange={weekHandler}/>
                     <label>Start Date</label>
                     <input class="w-32 mb-2" value={startDate} onChange={startHandler}/>
-                    <button type="submit" onClick={submitHandler} class="bg-red-400 hover:bg-red-500">Submit</button>
+                    <button type="submit" onClick={submitHandler} class="rounded-full px-2 py-1 text-white bg-red-400 hover:bg-red-500">Submit</button>
                 </form>
             </div>
         </div>

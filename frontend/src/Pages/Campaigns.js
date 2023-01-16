@@ -15,11 +15,14 @@ function Campaigns() {
     return (
         <div class>
             <Header />
+            <div class="m-8 flex flex-row justify-evenly text-3xl">
+                Campaign Intensity Heatmap
+            </div>
             <div class="flex flex-row items-center justify-center content-center">
                 <div class="w-3/4">
                     <CalendarHeatmap
-                        startDate={new Date('2022-01-18')}
-                        endDate={new Date('2023-01-17')}
+                        startDate={new Date('2022-01-15')}
+                        endDate={new Date('2023-01-21')}
                         values={[
                             { date: '2022-02-07', count: 8 },
                             { date: '2022-02-08', count: 8 },
@@ -405,7 +408,7 @@ function Campaigns() {
                     />
                 </div>
             </div>
-            <div class="flex flex-row justify-evenly">
+            <div class="mt-12 flex flex-row justify-evenly">
                 <button
                     class="inline-block rounded-md px-4 py-2 mt-4 text-base text-white bg-red-400 hover:text-gray-800 hover:bg-rose-300 active:text-gray-900 active:bg-red-400 active:shadow-sm"
                     onClick={() => setShowModal(true)}
