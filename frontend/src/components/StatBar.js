@@ -9,7 +9,7 @@ function StatBar(props) {
     }
     return(
         <div
-        class="flex items-center gap-4 rounded-lg border border-gray-100 bg-white p-4 my-2 w-64"
+        class="flex items-center gap-4 rounded-lg border border-gray-100 bg-white px-4 py-3 my-1.5 w-64"
         >
             <span class="rounded-full bg-blue-100 p-3 text-blue-600">
                 <img src={fileTray} alt="File SVG" class="w-6 h-6"></img>
