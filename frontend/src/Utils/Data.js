@@ -1,4 +1,4 @@
-export const Data = [
+const Data = [
     {"actual_qty":"52360","start_date":"2022-01-02","week":1,"sku":"APPLMD211000","id":"APPLMD2110002022010220220108","device_name":"iPhone 13","status_note":"EOL - Dec 2022","make":"Apple","status":"EOL","end_date":"2022-01-08","forecast_qty":"56230"},
     {"device_name":"iPhone 13","sku":"APPLMD211000","make":"Apple","status_note":"EOL - Dec 2022","id":"APPLMD2110002022010920220115","actual_qty":"50360","week":2,"start_date":"2022-01-09","forecast_qty":"54310","end_date":"2022-01-15","status":"EOL"},
     {"actual_qty":"48340","status":"EOL","status_note":"EOL - Dec 2022","device_name":"iPhone 13","make":"Apple","start_date":"2022-01-16","forecast_qty":"50080","sku":"APPLMD211000","week":3,"id":"APPLMD2110002022011620220122","end_date":"2022-01-22"},
@@ -124,3 +124,4 @@ export const Data = [
     {"device_name":"Galaxy S22","forecast_qty":"20330","start_date":"2023-01-01","end_date":"2023-01-07","status_note":"EOL - Mar 2023","sku":"SAMGSMD221000","status":"EOL < 8 weeks","actual_qty":"17220","make":"Samsung","id":"SAMGSMD2210002023010120230107","week":1},
     {"end_date":"2023-01-14","week":2,"start_date":"2023-01-08","device_name":"Galaxy S22","make":"Samsung","id":"SAMGSMD2210002023010820230114","sku":"SAMGSMD221000","actual_qty":"19270","status_note":"EOL - Mar 2023","status":"EOL < 8 weeks","forecast_qty":"19330"}
 ];
+export default Data;

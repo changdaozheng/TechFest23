@@ -7,6 +7,7 @@ import {TextboxTwo} from "../Components/Textbox";
 // import StockGraph from "../Components/StockGraph";
 // import { Link } from "react-router-dom";
 import DoughnutChart from "../Components/DoughtnutChart";
+import Table from "../Components/Table";
 
 function Dashboard() {
     const items = ["Apple", "Samsung"];
@@ -17,6 +18,7 @@ function Dashboard() {
     const [shortfall, setShortfall] = useState(false);
     const [stockChange, setStockChange] = useState(["", 0]);
     const [update, setUpdate] = useState(false);    
+    const [sortBy, setSortBy] = useState("date");
     const devices = useMemo(()=>({
         "Apple" : [["APPLMD211000", "iPhone 13", 20000, 0, [3000,3000,4000,5500,3200,2000,1000,3500,1500,3000]], ["APPLMD221000", "iPhone 14", 40000, 0,[4000,5000,6000,7500,4800,2300,1600,4300,7600,3800]]],
         "Samsung" : [["SAMGSMD211000", "Galaxy S21", 10000, 0,[2000,1000,2400,2500,1200,5200,3600,1100,2700,4500]], ["SAMGSMD221000", "Galaxy S22", 12000,0,[3000,1000,2000,2500,3200,5000,4000,1000,2000,7000]], ["SAMGSMD231000", "Galaxy S23", 50000, 0,[3800,4800,5300,7300,4300,2100,1200,3300,4600,3200]]],
@@ -76,14 +78,18 @@ function Dashboard() {
         changeStockHandler();
     }, [stockChange, changeStockHandler]);
 
+    const sortByHandler = (mode) => {
+        setSortBy(mode);
+    }
+
     return (
-        <div class="relative bg-gray-100 h-screen">
+        <div class="relative bg-gray-100 h-full">
             <div class="h-min pb-20">
                 <h1 class="text-center mb-2">Basic Dashboard</h1>
             </div>
             <div class="flex flex-row">
                 <div class="flex basis-1/3">
-                    <div id="Inventory" class="absolute top-0 left-0 flex flex-col w-1/4 h-screen  bg-slate-200 items-center">
+                    <div id="Inventory" class="fixed top-0 left-0 flex flex-col w-1/4 h-screen  bg-slate-200 items-center">
                         <h2 class="text-lg bg-slate-100 text-center w-full py-1 mt-4 ">Inventory</h2>
                         {/* <StockGraph /> */}
                         <Choice item={items} setMake={make=>setMake(make)}/>
@@ -115,8 +121,9 @@ function Dashboard() {
                         />
                     </div>
                 </div>
-                <div class="flex basis-2/3">
-                    <DataViz />
+                <div class="flex basis-2/3 flex-col">
+                    <DataViz sortByHandler={sortByHandler}/>
+                    <Table sortBy={sortBy}/>
                 </div>
             </div>
         </div>

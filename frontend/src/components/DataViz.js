@@ -1,7 +1,17 @@
 import { ArcherContainer, ArcherElement } from 'react-archer';
-import DoughnutChart from "../Components/DoughtnutChart";
+import DoughnutChart from "./DoughtnutChart";
 
-function DataViz() {
+function DataViz(props) {
+    const dateSortHandler = () =>{
+        props.sortByHandler("date");
+    } 
+    const companySortHandler = () =>{
+        props.sortByHandler("company");
+        
+    } 
+    const modelSortHandler = () =>{
+        props.sortByHandler("model")
+    }
     return (
         <div class="grow basis-3/4">
             <div class="grow mt-12">
@@ -46,7 +56,7 @@ function DataViz() {
                             </ArcherElement>
                         </div>
                         <div class="basis-1/3">
-                            <div class="flex flex-col content-center justify-evenly justify-center items-center">
+                            <div class="flex flex-col content-center justify-center items-center">
                                 <ArcherElement
                                     id="element1"
                                     relations={[
@@ -61,11 +71,13 @@ function DataViz() {
                                         },
                                     ]}
                                 >
-                                    <div class="w-16 h-16 m-5 bg-gradient-to-r from-[#E30000] to-[#760000] rounded-full border-2 shadow-[0_0px_0px_5px_rgb(255,0,0)] text-center flex">
-                                        <div class="text-white m-auto">
-                                            Date
+                                    <button type="button" onClick={dateSortHandler}>
+                                        <div class="w-16 h-16 m-5 bg-gradient-to-r from-[#E30000] to-[#760000] rounded-full border-2 shadow-[0_0px_0px_5px_rgb(255,0,0)] text-center flex">
+                                            <div class="text-white m-auto">
+                                                Date
+                                            </div>
                                         </div>
-                                    </div>
+                                    </button>
                                 </ArcherElement>
                                 <ArcherElement
                                     id="element2"
@@ -90,11 +102,13 @@ function DataViz() {
                                         },
                                     ]}
                                 >
-                                    <div class="w-20 h-20 m-5 bg-gradient-to-r from-[#E30000] to-[#760000] rounded-full border-2 shadow-[0_0px_0px_5px_rgb(255,0,0)] text-center flex">
-                                        <div class="text-white m-auto">
-                                            Company
+                                    <button type="button" onClick={companySortHandler}>
+                                        <div class="w-20 h-20 m-5 bg-gradient-to-r from-[#E30000] to-[#760000] rounded-full border-2 shadow-[0_0px_0px_5px_rgb(255,0,0)] text-center flex">
+                                            <div class="text-white m-auto">
+                                                Company
+                                            </div>
                                         </div>
-                                    </div>
+                                    </button>
                                 </ArcherElement>
                                 <ArcherElement
                                     id="element3"
@@ -128,16 +142,18 @@ function DataViz() {
                                         },
                                     ]}
                                 >
-                                    <div class="w-16 h-16 m-5 bg-gradient-to-r from-[#E30000] to-[#760000] rounded-full border-2 shadow-[0_0px_0px_5px_rgb(255,0,0)] text-center flex">
-                                        <div class="text-white m-auto">
-                                            Model
+                                    <button type="button" onClick={modelSortHandler}>
+                                        <div class="w-16 h-16 m-5 bg-gradient-to-r from-[#E30000] to-[#760000] rounded-full border-2 shadow-[0_0px_0px_5px_rgb(255,0,0)] text-center flex">
+                                            <div class="text-white m-auto">
+                                                Model 
+                                            </div>
                                         </div>
-                                    </div>
+                                    </button>
                                 </ArcherElement>
                             </div>
                         </div>
                         <div class="basis-1/3">
-                            <div class="flex flex-col content-center justify-evenly space-y-12 justify-center items-center">
+                            <div class="flex flex-col content-center space-y-12 justify-center items-center">
                                 <div class="space-y-12">
                                     <ArcherElement
                                         id="col3elem1"
