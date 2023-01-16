@@ -1,13 +1,13 @@
 import React from "react";
 import fileTray from "../Assets/fileTray.png"
-import Textbox from "../Components/Textbox";
+import {Textbox} from "../Components/Textbox";
 
 const ResupplyModal = props => {
     let render = [];
     for (let i=0;i<props.shortfallArr.length;i++)
     {
         render.push(
-            <div class="w-2/3 py-2 my-2 h-16 flex justify-evenly items-center bg-slate-200 rounded-full">
+            <div class="w-2/3 py-2 my-2 h-16 flex justify-evenly items-center justify-self-center bg-slate-200 rounded-full">
                 <p class="text-center">{props.shortfallArr[i]}</p>
                 <Textbox setChange={c=>props.setStockChange(c)} name={props.shortfallArr[i]}/>
             </div>
@@ -29,12 +29,12 @@ const ResupplyModal = props => {
                     {props.make}
                 </span>
 
-                <div class="flex-col relative mt-4 h-full w-full text-gray-800">
+                <div class="flex-col relative mt-4 h-full w-full items-center">
                     <div class="rounded-full bg-blue-100 py-4 flex justify-center align-middle">
                         <img src={fileTray} alt="File SVG" class="w-10 h-10"></img>
                         <h3 class="text-xl ml-4 mt-2 font-bold text-gray-900">Resupply</h3>
                     </div>
-                    <div class="relative w-full h-44 flex justify-center">
+                    <div class="flex w-full h-44 flex-col items-center">
                         {render}
                     </div>
                     <button onClick={props.onClose} class=" absolute bottom-4 rounded-full bg-red-100 px-3 py-1.5 text-xs font-medium text-red-600">

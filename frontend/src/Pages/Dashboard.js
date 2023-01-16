@@ -3,6 +3,7 @@ import Choice from "../Components/Choice";
 import StatBar from "../Components/StatBar";
 import ResupplyModal from "../Modals/ResupplyModal";
 import DataViz from "../Components/DataViz";
+import {TextboxTwo} from "../Components/Textbox";
 // import { Link } from "react-router-dom";
 
 function Dashboard() {
@@ -14,12 +15,34 @@ function Dashboard() {
     const [shortfall, setShortfall] = useState(false);
     const [stockChange, setStockChange] = useState(["", 0]);
     const [update, setUpdate] = useState(false);
+    
+    const [weeks, setWeeks] = useState(1);
 
-    const devices = useMemo(() => ({
-        "Apple": [["APPLMD211000", "iPhone 13", 20000, 10000], ["APPLMD221000", "iPhone 14", 40000, 50000]],
-        "Samsung": [["SAMGSMD211000", "Galaxy S21", 10000, 5000], ["SAMGSMD221000", "Galaxy S22", 12000, 8000], ["SAMGSMD231000", "Galaxy S23", 50000, 70000]],
-        "": []
-    }), []);
+    const devices = useMemo(()=>({
+        "Apple" : [["APPLMD211000", "iPhone 13", 20000, 0, [3000,3000,4000,5500,3200,2000,1000,3500,1500,3000]], ["APPLMD221000", "iPhone 14", 40000, 0,[4000,5000,6000,7500,4800,2300,1600,4300,7600,3800]]],
+        "Samsung" : [["SAMGSMD211000", "Galaxy S21", 10000, 0,[2000,1000,2400,2500,1200,5200,3600,1100,2700,4500]], ["SAMGSMD221000", "Galaxy S22", 12000,0,[3000,1000,2000,2500,3200,5000,4000,1000,2000,7000]], ["SAMGSMD231000", "Galaxy S23", 50000, 0,[3800,4800,5300,7300,4300,2100,1200,3300,4600,3200]]],
+        "":[]
+    }),[]);
+    
+    useEffect(()=>{
+        setWeeks(2);
+    },[]);
+
+
+    const weekChangeHandler = useCallback(()=>{
+        for (let i=0;i<devices[make].length;i++){
+            let temp = 0;
+            for (let j=0;j<weeks;j++){
+                temp += devices[make][i][4][j];
+            }
+            devices[make][i][3] = temp;
+        }
+        setUpdate(true);
+    },[weeks, devices, make]);
+
+    useEffect(()=>{
+        weekChangeHandler();
+    }, [weeks, weekChangeHandler]);
 
     const renderChange = useCallback(() => {
         let render = [];
@@ -61,7 +84,7 @@ function Dashboard() {
             </div>
             <div class="flex flex-row">
                 <div class="flex basis-1/4">
-                    <div id="Inventory" class="flex flex-col h-screen bg-slate-200 absolute top-0 left-0 items-center">
+                    {/* <div id="Inventory" class="flex flex-col h-screen bg-slate-200 absolute top-0 left-0 items-center">
                         <h2 class="text-lg bg-slate-100 text-center w-full py-1 mt-4 ">Inventory</h2>
 
                         <Choice item={items} setMake={make => setMake(make)} />
@@ -82,6 +105,36 @@ function Dashboard() {
                             : null}
                         <ResupplyModal onClose={() => setShowModal(false)} show={showModal} make={make} shortfallArr={shortfallArr}
                             setStockChange={c => setStockChange(c)}
+                        />
+                    </div> */}
+                    <div id="Inventory" class="absolute top-0 left-0 flex flex-col w-1/4 h-screen max-w-xs min-w-max bg-slate-200 items-center">
+                        <h2 class="text-lg bg-slate-100 text-center w-full py-1 mt-4 ">Inventory</h2>
+                        <Choice item={items} setMake={make=>setMake(make)}/>
+                        {make === "" ? <span class="h-1 w-64 rounded bg-slate-400 mt-7"/> :
+                            <>
+                                <h3 class="text-base h-6">{make}</h3>
+                                <span class="h-1 w-64 mt-1 rounded bg-slate-400"/>
+                                {arr} 
+                            </>
+                        }
+                        {make==="" ? null :
+                            <div class="absolute bottom-20 rounded-md px-4 py-2 mt-4 text-base text-gray-700 bg-red-400 ">
+                                <p class="text-center">Weeks</p>
+                                <TextboxTwo setChange={c=>setWeeks(c)} name={null}/>
+                            </div>
+                        }
+                        {shortfall && make !== "" ?
+                            <button
+                            class="absolute bottom-4 rounded-md px-4 py-2 mt-4 text-base text-gray-700 bg-red-400 
+                                hover:text-gray-800 hover:bg-rose-300 active:text-gray-900 active:bg-red-400 active:shadow-sm"
+                                onClick={()=>setShowModal(true)}
+                            >
+                                Resupply
+                            </button>
+                            :null}
+                            
+                        <ResupplyModal onClose={()=>setShowModal(false)} show={showModal} make={make} shortfallArr={shortfallArr}
+                            setStockChange={c=>setStockChange(c)}
                         />
                     </div>
                 </div>
