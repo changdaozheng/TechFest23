@@ -19,29 +19,29 @@ const ResupplyModal = props => {
     }
     else {
         return(
-            <div class="fixed left-0 top-0 right-0 bottom-0 bg-black/5" onClick={props.onClose}>
-            <div onClick={e=>e.stopPropagation()}
-            class="fixed left-1/4 w-1/2 top-1/4 h-1/2 block rounded-xl border bg-gray-100 border-gray-100 p-8 shadow-xl"
-            >
-                <span
-                    class="absolute right-4 top-4 rounded-full bg-slate-200 px-3 py-1.5 text-xs font-medium text-slate-600"
+            <div class="fixed left-0 top-0 right-0 bottom-0 bg-black/5 z-30" onClick={props.onClose}>
+                <div onClick={e=>e.stopPropagation()}
+                class="fixed left-1/4 w-1/2 top-1/4 h-1/2 block rounded-xl border bg-gray-100 border-gray-100 p-8 shadow-xl"
                 >
-                    {props.make}
-                </span>
+                    <span
+                        class="absolute right-4 top-4 rounded-full bg-slate-200 px-3 py-1.5 text-xs font-medium text-slate-600"
+                    >
+                        {props.make}
+                    </span>
 
-                <div class="flex-col relative mt-4 h-full w-full items-center">
-                    <div class="rounded-full bg-blue-100 py-4 flex justify-center align-middle">
-                        <img src={fileTray} alt="File SVG" class="w-10 h-10"></img>
-                        <h3 class="text-xl ml-4 mt-2 font-bold text-gray-900">Resupply</h3>
+                    <div class="flex-col relative mt-4 h-full w-full items-center">
+                        <div class="rounded-full bg-blue-100 py-4 flex justify-center align-middle">
+                            <img src={fileTray} alt="File SVG" class="w-10 h-10"></img>
+                            <h3 class="text-xl ml-4 mt-2 font-bold text-gray-900">Resupply</h3>
+                        </div>
+                        <div class="flex w-full h-44 flex-col items-center">
+                            {render}
+                        </div>
+                        <button onClick={props.onClose} class=" absolute bottom-4 rounded-full bg-red-100 px-3 py-1.5 text-xs font-medium text-red-600">
+                            Close
+                        </button>
                     </div>
-                    <div class="flex w-full h-44 flex-col items-center">
-                        {render}
-                    </div>
-                    <button onClick={props.onClose} class=" absolute bottom-4 rounded-full bg-red-100 px-3 py-1.5 text-xs font-medium text-red-600">
-                        Close
-                    </button>
                 </div>
-            </div>
             </div>
         )
     }
