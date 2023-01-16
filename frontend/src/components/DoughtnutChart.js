@@ -21,7 +21,7 @@ function DoughnutChart() {
             hoverOffset: 4
         }, {
             label: 'Fill',
-            data: [80, 20],
+            data: [98.8, 1.2],
             backgroundColor: [
                 'rgb(227, 0, 0)',
                 'rgba(255, 255, 255, 0.2)',
