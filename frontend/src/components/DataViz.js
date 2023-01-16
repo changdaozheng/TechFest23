@@ -4,13 +4,15 @@ import DoughnutChart from "./DoughtnutChart";
 function DataViz(props) {
     const dateSortHandler = () =>{
         props.sortByHandler("date");
+        props.tableRef.current?.scrollIntoView({behavior:'smooth'});
     } 
     const companySortHandler = () =>{
         props.sortByHandler("company");
-        
+        props.tableRef.current?.scrollIntoView({behavior:'smooth'});
     } 
     const modelSortHandler = () =>{
         props.sortByHandler("model")
+        props.tableRef.current?.scrollIntoView({behavior:'smooth'});
     }
     return (
         <div class="grow basis-3/4">

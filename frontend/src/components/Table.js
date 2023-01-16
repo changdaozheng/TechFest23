@@ -63,7 +63,7 @@ export default function Table({sortBy}) {
             }
         }
         fetchData();
-    })
+    },[sortBy])
 
     const downloadHandler = () => {
         csvLink.current.link.click()
