@@ -172,7 +172,7 @@ function DataViz(props) {
                                         ]}
                                     >
                                         <div id="mini-bubble" class="flex flex-row">
-                                            <div class="w-12 h-12 mr-2 rounded-full border-2 border-red-700 text-center flex flex-col justify-center">
+                                            <div class="w-12 h-12 mr-2 rounded-full border-2 border-red-700 text-sm text-center flex flex-col justify-center">
                                             65.6%
                                             </div>
                                             <div>
@@ -196,7 +196,7 @@ function DataViz(props) {
                                         ]}
                                     >
                                         <div id="mini-bubble" class="flex flex-row">
-                                            <div class="w-12 h-12 mr-2 rounded-full border-2 border-red-700 text-center flex flex-col justify-center">
+                                            <div class="w-12 h-12 mr-2 rounded-full border-2 border-red-700 text-sm text-center flex flex-col justify-center">
                                                 34.4%
                                             </div>
                                             <div>
@@ -222,7 +222,7 @@ function DataViz(props) {
                                         ]}
                                     >
                                         <div id="mini-bubble" class="flex flex-row">
-                                            <div class="w-12 h-12 mr-2 rounded-full border-2 border-red-700 text-center flex flex-col justify-center">
+                                            <div class="w-12 h-12 mr-2 rounded-full border-2 border-red-700 text-sm text-center flex flex-col justify-center">
                                                 37.4%
                                             </div>
                                             <div>
@@ -246,7 +246,7 @@ function DataViz(props) {
                                         ]}
                                     >
                                         <div id="mini-bubble" class="flex flex-row">
-                                            <div class="w-12 h-12 mr-2 rounded-full border-2 border-red-700 text-center flex flex-col justify-center">
+                                            <div class="w-12 h-12 mr-2 rounded-full border-2 border-red-700 text-sm text-center flex flex-col justify-center">
                                             28.1%
                                             </div>
                                             <div>
@@ -270,7 +270,7 @@ function DataViz(props) {
                                         ]}
                                     >
                                         <div id="mini-bubble" class="flex flex-row">
-                                            <div class="w-12 h-12 mr-2 rounded-full border-2 border-red-700 text-center flex flex-col justify-center">
+                                            <div class="w-12 h-12 mr-2 rounded-full border-2 border-red-700 text-sm text-center flex flex-col justify-center">
                                                 30.9%
                                             </div>
                                             <div>
