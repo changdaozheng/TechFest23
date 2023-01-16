@@ -1,14 +1,16 @@
 import {Router} from "express";
 import status from "./healthStatus.js";
-import forecast from "./forecast.js"
-import sample from "./sample.js"
+import forecastRouter from "./forecast.js"
+import campaignRouter from "./campaign.js"
+import sampleRouter from "./sample.js"
 
 
 
 const router = Router();
 
 router.use("/status", status);
-router.use("/forecast", forecast);
-router.use("/sample", sample);
+router.use("/forecast", forecastRouter);
+router.use("/campaign", campaignRouter);
+router.use("/sample", sampleRouter);
 
 export default router;
