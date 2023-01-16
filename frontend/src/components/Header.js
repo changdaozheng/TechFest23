@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-
+  var currentDate = new Date();
+  var date = currentDate.getDate() + "/"
+      + (currentDate.getMonth() + 1) + "/"
+      + currentDate.getFullYear();
   return (
     <div
       className={`w-full h-min fixed top-0 left-0 z-30 bg-white text-black flex items-center justify-between mb-3`}
@@ -24,6 +27,7 @@ const Header = () => {
           DATALOGGER
         </Link>
       </div>
+      <span class="relative right-12 justify-self-end bg-red-100 text-red-500 rounded-full px-3">{date}</span>
     </div>
   );
 };

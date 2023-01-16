@@ -12,13 +12,7 @@ import Header from "../Components/Header";
 
 function Dashboard() {
     const tableRef = useRef(null);
-    var currentDate = new Date();
-    var datetime = currentDate.getDate() + "/"
-        + (currentDate.getMonth() + 1) + "/"
-        + currentDate.getFullYear() + " "
-        + currentDate.getHours() + ":"
-        + currentDate.getMinutes() + ":"
-        + currentDate.getSeconds();
+
 
     const items = ["Apple", "Samsung"];
     const [showModal, setShowModal] = useState(false);
@@ -101,8 +95,8 @@ function Dashboard() {
             <div class="relative bg-gray-100 h-full">
                 <div class="flex flex-row">
                     <div class="flex basis-1/3">
-                        <div id="Inventory" class="fixed top-20 left-0 flex flex-col w-1/4 h-full  bg-slate-200 items-center">
-                            <h2 class="text-lg bg-slate-100 text-center w-full py-1 mt-4 ">Inventory</h2>
+                        <div id="Inventory" class="fixed top-[76px] left-0 flex flex-col w-1/4 h-full  bg-slate-200 items-center">
+                            <h2 class="text-lg bg-slate-100 text-center w-full mt-4 ">Inventory</h2>
                             {/* <StockGraph /> */}
                             <Choice item={items} setMake={make=>setMake(make)}/>
                             {make === "" ? <span class="h-1 w-64 rounded bg-slate-400 mt-7"/> :
