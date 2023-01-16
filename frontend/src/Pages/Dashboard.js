@@ -113,14 +113,14 @@ function Dashboard() {
                                 </>
                             }
                             {make === "" ? null :
-                                <div class="absolute bottom-4 rounded-md px-4 py-2 mt-4 text-base text-gray-700 bg-red-400 ">
+                                <div class="absolute bottom-20 rounded-md px-4 py-2 my-2 text-base text-gray-700 bg-red-400 ">
                                     <p class="text-center">Weeks</p>
                                     <TextboxTwo setChange={c=>setWeeks(c)} name={null}/>
                                 </div>
                             }
                             {shortfall && make !== "" ?
                                 <button
-                                class="absolute bottom-28 rounded-md px-4 py-2 mt-4 text-base text-gray-700 bg-red-400 
+                                class="absolute bottom-44 rounded-md px-4 py-2 mt-4 text-base text-gray-700 bg-red-400 
                                     hover:text-gray-800 hover:bg-rose-300 active:text-gray-900 active:bg-red-400 active:shadow-sm"
                                     onClick={()=>setShowModal(true)}
                                 >
