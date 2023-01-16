@@ -7,7 +7,7 @@ const Header = () => {
     <div
       className={`w-full h-min fixed top-0 left-0 z-30 bg-white text-black flex items-center justify-between mb-3`}
     >
-      <div className={`flex items-center text-lg font-["Rubik"] px-10 z-0`}>
+      <div className={`flex items-center text-lg font-["Roboto"] px-10 z-0`}>
         <Link
           to="/"
           className={`p-8 + ${window.location.pathname === "/" ? 'underline' : ''}`}>
@@ -22,11 +22,6 @@ const Header = () => {
           to="/Datalogger"
           className={`p-8 + ${window.location.pathname === "/Datalogger" || window.location.pathname === "/Datalogger" ? 'underline' : ''}`}>
           DATALOGGER
-        </Link>
-        <Link
-          to="/"
-          className={`p-8 + ${window.location.pathname === "/AboutUs" ? 'underline' : ''}`}>
-          nil
         </Link>
       </div>
     </div>
