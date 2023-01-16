@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useMemo, useCallback } from "react";
-import Choice from "../Components/Choice";
-import StatBar from "../Components/StatBar";
+import Choice from "../components/Choice";
+import StatBar from "../components/StatBar";
 import ResupplyModal from "../Modals/ResupplyModal";
 // import { Link } from "react-router-dom";
-import DoughnutChart from "../Components/DoughtnutChart";
+import DoughnutChart from "../components/DoughtnutChart";
 
 function Dashboard(){
     const [showModal, setShowModal] = useState(false);

@@ -10,7 +10,7 @@ const Header = () => {
   const [showProfile, setShowProfile] = useState(false);
   const { currentUser } = useAuth()
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  
   useEffect(() => {
     if (currentUser === null) {
       setIsLoggedIn(false)

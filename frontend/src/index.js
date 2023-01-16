@@ -8,6 +8,7 @@ import {
 import Dashboard from "./Pages/Dashboard";
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import Table from './components/Table';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
