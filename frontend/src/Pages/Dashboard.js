@@ -7,6 +7,7 @@ import {TextboxTwo} from "../Components/Textbox";
 // import StockGraph from "../Components/StockGraph";
 // import { Link } from "react-router-dom";
 import DoughnutChart from "../Components/DoughtnutChart";
+import Header from "../Components/Header";
 
 function Dashboard() {
     const items = ["Apple", "Samsung"];
@@ -77,50 +78,44 @@ function Dashboard() {
     }, [stockChange, changeStockHandler]);
 
     return (
-        <div class="relative bg-gray-100 h-screen">
-            <div class="h-min pb-20">
-                <h1 class="text-center mb-2">Basic Dashboard</h1>
-            </div>
-            <div class="flex flex-row">
-                <div class="flex basis-1/3">
-                    <div id="Inventory" class="absolute top-0 left-0 flex flex-col w-1/4 h-screen  bg-slate-200 items-center">
-                        <h2 class="text-lg bg-slate-100 text-center w-full py-1 mt-4 ">Inventory</h2>
-                        {/* <StockGraph /> */}
-                        <Choice item={items} setMake={make=>setMake(make)}/>
-                        {make === "" ? <span class="h-1 w-64 rounded bg-slate-400 mt-7"/> :
-                            <>
-                                <h3 class="text-base h-6">{make}</h3>
-                                <span class="h-1 w-64 mt-1 rounded bg-slate-400"/>
-                                {arr} 
-                            </>
-                        }
-                        {make === "" ? null :
-                            <div class="absolute bottom-4 rounded-md px-4 py-2 mt-4 text-base text-gray-700 bg-red-400 ">
-                                <p class="text-center">Weeks</p>
-                                <TextboxTwo setChange={c=>setWeeks(c)} name={null}/>
-                            </div>
-                        }
-                        {shortfall && make !== "" ?
-                            <button
-                            class="absolute bottom-28 rounded-md px-4 py-2 mt-4 text-base text-gray-700 bg-red-400 
-                                hover:text-gray-800 hover:bg-rose-300 active:text-gray-900 active:bg-red-400 active:shadow-sm"
-                                onClick={()=>setShowModal(true)}
-                            >
-                                Resupply
-                            </button>
-                            :null}
-                            
-                        <ResupplyModal onClose={()=>setShowModal(false)} show={showModal} make={make} shortfallArr={shortfallArr}
-                            setStockChange={c=>setStockChange(c)}
-                        />
-                    </div>
+        <div>
+            <Header />
+            <div class="relative bg-gray-100 h-screen">
+                <div class="h-min pb-20">
+                    <h1 class="text-center mb-2">Basic Dashboard</h1>
                 </div>
-                <div class="flex basis-2/3">
-                    <DataViz />
+                <div class="flex flex-row">
+                    <div class="flex basis-1/4">
+                        <div id="Inventory" class="flex flex-col h-screen bg-slate-200 absolute top-0 left-0 items-center">
+                            <h2 class="text-lg bg-slate-100 text-center w-full py-1 mt-4 ">Inventory</h2>
+
+                            <Choice item={items} setMake={make => setMake(make)} />
+                            <span class="h-1 w-3/5 mt-1 rounded bg-slate-400" />
+                            {make === "" ? null :
+                                <>
+                                    <h3 class="text-base ">{make}</h3>
+                                    {arr}
+                                </>
+                            }
+                            {shortfall && make !== "" ?
+                                <button
+                                    class="inline-block rounded-md px-4 py-2 mt-4 text-base text-gray-700 bg-red-400 hover:text-gray-800 hover:bg-rose-300 active:text-gray-900 active:bg-red-400 active:shadow-sm"
+                                    onClick={() => setShowModal(true)}
+                                >
+                                    Resupply
+                                </button>
+                                : null}
+                            <ResupplyModal onClose={() => setShowModal(false)} show={showModal} make={make} shortfallArr={shortfallArr}
+                                setStockChange={c => setStockChange(c)}
+                            />
+                        </div>
+                    </div>
+                    <div class="flex basis-3/4">
+                        <DataViz />
+                    </div>
                 </div>
             </div>
         </div>
-
     );
 }
 export default Dashboard;
