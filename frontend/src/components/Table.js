@@ -43,7 +43,7 @@ export default function Table({sortBy}) {
                         Data.sort((a,b)=>{
                             const dateA = new Date(a.start_date).getTime();
                             const dateB = new Date(b.start_date).getTime();
-                            return dateA-dateB
+                            return dateB-dateA
                         })
                         break;
                     case "company":
