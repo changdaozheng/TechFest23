@@ -97,7 +97,7 @@ router.put("/", async (req, res) => {
         const docRef = doc(forecast, id);
         const updateStatus = await updateDoc(docRef, data);
 
-        res.status(200).send("forecase updated");
+        res.status(200).send("forecast updated");
     } catch (e) { 
         console.log(e);
         res.status(400).send(e);
