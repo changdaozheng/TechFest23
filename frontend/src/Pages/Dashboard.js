@@ -7,27 +7,24 @@ import {TextboxTwo} from "../Components/Textbox";
 // import { Link } from "react-router-dom";
 
 function Dashboard() {
-    const [showModal, setShowModal] = useState(false);
     const items = ["Apple", "Samsung"];
+    const [showModal, setShowModal] = useState(false);
     const [make, setMake] = useState("");
     const [arr, setArr] = useState([]); // for rendering
-    const [shortfallArr, setShortfallArr] = useState([]);
+    const [shortfallArr, setShortfallArr] = useState([]); // for rendering 
     const [shortfall, setShortfall] = useState(false);
     const [stockChange, setStockChange] = useState(["", 0]);
-    const [update, setUpdate] = useState(false);
-    
-    const [weeks, setWeeks] = useState(1);
-
+    const [update, setUpdate] = useState(false);    
     const devices = useMemo(()=>({
         "Apple" : [["APPLMD211000", "iPhone 13", 20000, 0, [3000,3000,4000,5500,3200,2000,1000,3500,1500,3000]], ["APPLMD221000", "iPhone 14", 40000, 0,[4000,5000,6000,7500,4800,2300,1600,4300,7600,3800]]],
         "Samsung" : [["SAMGSMD211000", "Galaxy S21", 10000, 0,[2000,1000,2400,2500,1200,5200,3600,1100,2700,4500]], ["SAMGSMD221000", "Galaxy S22", 12000,0,[3000,1000,2000,2500,3200,5000,4000,1000,2000,7000]], ["SAMGSMD231000", "Galaxy S23", 50000, 0,[3800,4800,5300,7300,4300,2100,1200,3300,4600,3200]]],
         "":[]
     }),[]);
+    const [weeks, setWeeks] = useState(1);
     
     useEffect(()=>{
         setWeeks(2);
     },[]);
-
 
     const weekChangeHandler = useCallback(()=>{
         for (let i=0;i<devices[make].length;i++){
