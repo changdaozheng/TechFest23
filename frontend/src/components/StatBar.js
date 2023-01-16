@@ -11,8 +11,8 @@ function StatBar(props) {
         </span>
 
         <div>
-            {props.shortfall ? <p class="text-xl font-medium text-gray-900">{props.title[0]} {props.value[0]}</p>
-                : <p class="text-xl font-medium text-red-600">{props.title[0]} {props.value[0]}</p>
+            {props.shortfall ? <p class="text-xl font-medium text-red-600">{props.title[0]} {props.value[0]}</p>
+                : <p class="text-xl font-medium text-gray-900">{props.title[0]} {props.value[0]}</p>
             }
             <p class="text-xs text-gray-500">{props.title[1]} {props.value[1]}</p>
         </div>
