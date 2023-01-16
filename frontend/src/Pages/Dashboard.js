@@ -6,10 +6,19 @@ import DataViz from "../Components/DataViz";
 import {TextboxTwo} from "../Components/Textbox";
 // import StockGraph from "../Components/StockGraph";
 // import { Link } from "react-router-dom";
-import DoughnutChart from "../Components/DoughtnutChart";
 import Table from "../Components/Table";
+// import DoughnutChart from "../Components/DoughtnutChart";
+import Header from "../Components/Header";
 
 function Dashboard() {
+    var currentDate = new Date();
+    var datetime = currentDate.getDate() + "/"
+                    + (currentDate.getMonth()+1) + "/"
+                    + currentDate.getFullYear() + " "
+                    + currentDate.getHours() + ":"
+                    + currentDate.getMinutes() + ":"
+                    + currentDate.getSeconds();
+
     const items = ["Apple", "Samsung"];
     const [showModal, setShowModal] = useState(false);
     const [make, setMake] = useState("");
@@ -20,7 +29,7 @@ function Dashboard() {
     const [update, setUpdate] = useState(false);    
     const [sortBy, setSortBy] = useState("date");
     const devices = useMemo(()=>({
-        "Apple" : [["APPLMD211000", "iPhone 13", 20000, 0, [3000,3000,4000,5500,3200,2000,1000,3500,1500,3000]], ["APPLMD221000", "iPhone 14", 40000, 0,[4000,5000,6000,7500,4800,2300,1600,4300,7600,3800]]],
+        "Apple" : [["APPLMD211000", "iPhone 13", 0, 0, [0,0,0,0,0,0,0,0,0,0]], ["APPLMD221000", "iPhone 14", 200000, 0,[53399,52569,52310,49839,50011,49344,49819,50120,50964,50633]]],
         "Samsung" : [["SAMGSMD211000", "Galaxy S21", 10000, 0,[2000,1000,2400,2500,1200,5200,3600,1100,2700,4500]], ["SAMGSMD221000", "Galaxy S22", 12000,0,[3000,1000,2000,2500,3200,5000,4000,1000,2000,7000]], ["SAMGSMD231000", "Galaxy S23", 50000, 0,[3800,4800,5300,7300,4300,2100,1200,3300,4600,3200]]],
         "":[]
     }),[]);
@@ -127,7 +136,6 @@ function Dashboard() {
                 </div>
             </div>
         </div>
-
     );
 }
 export default Dashboard;
