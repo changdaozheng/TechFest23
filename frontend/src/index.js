@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Dashboard from "./Pages/Dashboard";
 import Campaigns from './Pages/Campaigns';
+import Datalogger from "./Pages/Datalogger"
 
 import './index.css';
 import reportWebVitals from './reportWebVitals';
@@ -18,6 +19,7 @@ root.render(
       <Routes>
         <Route path='/*' element={<Dashboard />} />
         <Route path='/Campaigns*' element={<Campaigns />} />
+        <Route path='/Datalogger*' element={<Datalogger />} />
       </Routes>
   </BrowserRouter>
 );

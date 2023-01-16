@@ -19,9 +19,9 @@ const Header = () => {
           CAMPAIGNS
         </Link>
         <Link
-          to="/"
-          className={`p-8 + ${window.location.pathname === "/Healthcare" || window.location.pathname === "/HealthcareDetails" ? 'underline' : ''}`}>
-          nil
+          to="/Datalogger"
+          className={`p-8 + ${window.location.pathname === "/Datalogger" || window.location.pathname === "/Datalogger" ? 'underline' : ''}`}>
+          DATALOGGER
         </Link>
         <Link
           to="/"
