@@ -87,8 +87,8 @@ function Datalogger() {
     return(
         <div>
             <Header />
-            <div class="flex-col w-screen h-screen ">
-                <form class="flex flex-col bg-red-200 items-center p-4" onSubmit={submitHandler}>
+            <div class="flex-col w-screen h-screen pt-20 ">
+                <form class="flex flex-col bg-red-200 h-full items-center p-4" onSubmit={submitHandler}>
                     <label>Make</label>
                     <select class="w-32 mb-2" value={make} onChange={makeHandler}>
                         <option value="-">-</option>

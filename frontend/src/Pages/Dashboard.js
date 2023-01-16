@@ -101,7 +101,7 @@ function Dashboard() {
             <div class="relative bg-gray-100 h-full">
                 <div class="flex flex-row">
                     <div class="flex basis-1/3">
-                        <div id="Inventory" class="fixed top-0 left-0 flex flex-col w-1/4 h-screen  bg-slate-200 items-center">
+                        <div id="Inventory" class="fixed top-20 left-0 flex flex-col w-1/4 h-full  bg-slate-200 items-center">
                             <h2 class="text-lg bg-slate-100 text-center w-full py-1 mt-4 ">Inventory</h2>
                             {/* <StockGraph /> */}
                             <Choice item={items} setMake={make=>setMake(make)}/>

@@ -1,4 +1,3 @@
-
 import React from "react";
 import fileTray from "../Assets/fileTray.png"
 function StatBar(props) {
