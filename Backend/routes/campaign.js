@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { campaign } from "../firebase.js";
 import moment from "moment"
-import { doc, setDoc, getDocs, getDoc } from "@firebase/firestore";
+import { doc, setDoc, getDocs, getDoc, Timestamp } from "@firebase/firestore";
 
 const router =  Router();
 
@@ -16,11 +16,12 @@ router.post("/", async (req, res) => {
         } = req.body;
 
         const campaign_id = make + start_date.split('-').join("");
+        const start_timestamp = Timestamp.fromDate(new Date(start_date)); 
 
         const docRef = await setDoc(doc(campaign, campaign_id), {
             campaign_id: campaign_id, 
             make : make,
-            start_date : start_date,
+            start_date : start_timestamp,
             offer_days : offer_days,
             offer_amount : offer_amount
         })
