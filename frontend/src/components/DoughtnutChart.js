@@ -7,32 +7,43 @@ Chart.register(...registerables);
 
 function DoughnutChart() {
     const data = {
-        labels: [
-            'Red',
-            'Blue',
-            'Yellow'
-        ],
+        // labels: [
+        //     'Red',
+        //     'Blue',
+        //     'Yellow'
+        // ],
         datasets: [{
-            label: 'My First Dataset',
-            data: [300, 50, 100],
+            label: 'Satisfaction',
+            data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
             backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)'
+                'rgba(150, 0, 0, 0.6)',
             ],
             hoverOffset: 4
-        }]
+        }, {
+            label: 'Fill',
+            data: [80, 20],
+            backgroundColor: [
+                'rgb(227, 0, 0)',
+                'rgba(255, 255, 255, 0.2)',
+            ],
+          }]
     }
 
     const options = {
+        elements: {
+            arc: {
+                borderColor: 'rgb(243 244 246)',
+                borderWidth: 12,
+            },
+        },
         plugins: {
             datalabels: {
-              formatter: (value) => {
-                return value + '%';
-              },
+                formatter: (value) => {
+                    return value + '%';
+                },
             },
-          },
-        }
+        },
+    }
 
     const plugins = [{
         beforeDraw: function (chart) {
