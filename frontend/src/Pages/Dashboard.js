@@ -133,7 +133,7 @@ function Dashboard() {
                             />
                         </div>
                     </div>
-                    <div class="flex basis-2/3 flex-col">
+                    <div class="flex basis-2/3 flex-col mt-20">
                         <DataViz sortByHandler={sortByHandler} tableRef={tableRef}/>
                         <div ref={tableRef}>
                             <Table sortBy={sortBy} />

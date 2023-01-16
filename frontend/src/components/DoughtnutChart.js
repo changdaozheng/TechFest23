@@ -51,13 +51,19 @@ function DoughnutChart() {
                 height = chart.height,
                 ctx = chart.ctx;
             ctx.restore();
-            var fontSize = (height / 160).toFixed(2);
+            var fontSize = (height / 240).toFixed(1.5);
             ctx.font = fontSize + "em sans-serif";
             ctx.textBaseline = "top";
-            var text = "Foo-bar",
+            var texta = "98.8%",
+                textaX = Math.round((width - ctx.measureText(text).width) / 2),
+                textaY = height / 2 - 25 ;
+            var text = "Satisfaction",
                 textX = Math.round((width - ctx.measureText(text).width) / 2),
-                textY = height / 2;
+                textY = (height / 2) + 25 ;
             ctx.fillText(text, textX, textY);
+            var fontSize = (height / 140).toFixed(1.5);
+            ctx.font = fontSize + "em sans-serif";
+            ctx.fillText(texta, textaX, textaY);
             ctx.save();
         }
     }]
