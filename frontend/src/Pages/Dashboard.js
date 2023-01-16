@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useMemo, useCallback } from "react";
-import Choice from "../components/Choice";
-import StatBar from "../components/StatBar";
+import Choice from "../Components/Choice";
+import StatBar from "../Components/StatBar";
 import ResupplyModal from "../Modals/ResupplyModal";
 import DataViz from "../Components/DataViz";
 import {TextboxTwo} from "../Components/Textbox";
 // import StockGraph from "../Components/StockGraph";
 // import { Link } from "react-router-dom";
-import DoughnutChart from "../components/DoughtnutChart";
+import DoughnutChart from "../Components/DoughtnutChart";
 
 function Dashboard() {
     const items = ["Apple", "Samsung"];

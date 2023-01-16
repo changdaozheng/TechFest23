@@ -1,6 +1,6 @@
 import React from "react";
-import fileTray from "../assets/fileTray.png"
-import {Textbox} from "../components/Textbox";
+import fileTray from "../Assets/fileTray.png"
+import {Textbox} from "../Components/Textbox";
 
 const ResupplyModal = props => {
     let render = [];
