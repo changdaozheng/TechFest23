@@ -20,7 +20,7 @@ function Datalogger() {
         let render = [];
         if (make === "Apple"){
             render.push(
-                <select class="w-32" value={device} onChange={deviceHandler}>
+                <select class="w-32 mb-2" value={device} onChange={deviceHandler}>
                     <option value="">-</option>
                     <option value="iPhone 13">iPhone 13</option>
                     <option value="iPhone 14">iPhone 14</option>
@@ -29,7 +29,7 @@ function Datalogger() {
         }
         else if (make === "Samsung"){
             render.push(
-                <select class="w-32" value={device} onChange={deviceHandler}>    
+                <select class="w-32 mb-2" value={device} onChange={deviceHandler}>    
                     <option value="">-</option>                
                     <option value="Galaxy S21">Galaxy S21</option>
                     <option value="Galaxy S22">Galaxy S22</option>
@@ -39,7 +39,7 @@ function Datalogger() {
         }
         else{
             render.push(
-                <select class="w-32" value={device} onChange={deviceHandler}>    
+                <select class="w-32 mb-2" value={device} onChange={deviceHandler}>    
                     <option value="">-</option>
                 </select>
             )
@@ -90,7 +90,7 @@ function Datalogger() {
             <div class="flex-col w-screen h-screen ">
                 <form class="flex flex-col bg-blue-500 items-center" onSubmit={submitHandler}>
                     <label>Make</label>
-                    <select class="w-32" value={make} onChange={makeHandler}>
+                    <select class="w-32 mb-2" value={make} onChange={makeHandler}>
                         <option value="-">-</option>
                         <option value="Apple">Apple</option>
                         <option value="Samsung">Samsung</option>
@@ -98,12 +98,12 @@ function Datalogger() {
                     <label>Device</label>
                     {renderArr}
                     <label>Demand</label>
-                    <input class="w-32" value={demand} onChange={demandHandler}/>
+                    <input class="w-32 mb-2" value={demand} onChange={demandHandler}/>
                     <label>Week</label>
-                    <input class="w-32" value={week} onChange={weekHandler}/>
+                    <input class="w-32 mb-2" value={week} onChange={weekHandler}/>
                     <label>Start Date</label>
-                    <input class="w-32" value={startDate} onChange={startHandler}/>
-                    <button type="submit" onClick={submitHandler}>Submit</button>
+                    <input class="w-32 mb-2" value={startDate} onChange={startHandler}/>
+                    <button type="submit" onClick={submitHandler} class="bg-red-400 hover:bg-red-500">Submit</button>
                 </form>
             </div>
         </div>
