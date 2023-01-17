@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Singcast from "../Assets/Singcast.jpeg"
 
 const Header = () => {
   var currentDate = new Date();
@@ -26,7 +27,13 @@ const Header = () => {
           className={`p-8 + ${window.location.pathname === "/Datalogger" || window.location.pathname === "/Datalogger" ? 'underline' : ''}`}>
           DATALOGGER
         </Link>
+        <Link
+          to="/MLPage"
+          className={`p-8 + ${window.location.pathname === "/MLPage" || window.location.pathname === "/MLPage" ? 'underline' : ''}`}>
+          FORECAST RETRIEVAL
+        </Link>
       </div>
+      <img src={Singcast} alt="Logo" class="h-16 w-24" />
       <span class="relative right-12 justify-self-end bg-red-100 text-red-500 rounded-full px-3">{date}</span>
     </div>
   );
