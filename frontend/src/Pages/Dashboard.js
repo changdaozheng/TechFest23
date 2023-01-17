@@ -122,9 +122,7 @@ function Dashboard() {
                                 </button>
                                 :null}
                                 
-                            <ResupplyModal onClose={()=>setShowModal(false)} show={showModal} make={make} shortfallArr={shortfallArr}
-                                setStockChange={c=>setStockChange(c)}
-                            />
+                            
                         </div>
                     </div>
                     <div class="flex basis-2/3 flex-col mt-20">
@@ -135,6 +133,8 @@ function Dashboard() {
                     </div>
                 </div>
             </div>
+            <ResupplyModal onClose={()=>setShowModal(false)} show={showModal} make={make} shortfallArr={shortfallArr}
+                                setStockChange={c=>setStockChange(c)}/>
         </div>
     );
 }
