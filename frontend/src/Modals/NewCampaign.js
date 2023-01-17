@@ -11,7 +11,7 @@ const NewCampaign = props => {
         start_date: "",
     });
     const [maker, setMaker] = useState("-");
-    const [offerDays, setOfferDays] = useState("-");
+    const [offerDays, setOfferDays] = useState("");
     const [offerAmount, setOfferAmount] = useState();
     const [startDate, setStartDate] = useState("");
 
@@ -55,7 +55,7 @@ const NewCampaign = props => {
                     </span>
 
                     <div class="flex-col relative mt-4 h-full w-full items-center">
-                        <div class="rounded-full bg-blue-100 py-4 flex justify-center align-middle">
+                        <div class="rounded-full bg-red-100 py-4 flex justify-center align-middle">
                             <img src={fileTray} alt="File SVG" class="w-10 h-10"></img>
                             <h3 class="text-xl ml-4 mt-2 font-bold text-gray-900">New Campaign</h3>
                         </div>
@@ -81,7 +81,7 @@ const NewCampaign = props => {
                                     <label class="mr-1">Start Date</label>
                                     <input class="w-32 m-2 ml-8" value={startDate} onChange={startHandler} />
                                 </div>
-                                <button type="submit" onClick={submitHandler} class="rounded-full px-2 text-white bg-red-400 hover:bg-red-500">Submit</button>
+                                <button type="submit" onClick={submitHandler} class="mt-5 rounded-full p-2 text-white bg-red-400 hover:bg-red-500">Submit</button>
                             </form>
                         </div>
                         <button onClick={props.onClose} class=" absolute bottom-4 rounded-full bg-red-100 px-3 py-1.5 text-xs font-medium text-red-600">

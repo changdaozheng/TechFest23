@@ -71,13 +71,17 @@ function TextboxTwo(props) {
             <span class="absolute inset-y-0 right-0 grid w-10 place-content-center">
                 <button
                     type="button"
-                    class="rounded-full bg-rose-500 p-0.5 text-white hover:bg-rose-600"
+                    class="rounded-full bg-rose-300  text-white hover:bg-rose-400"
                     onClick={()=>props.setChange(amount)}
                 >
-                    <span class="sr-only">Submit</span>
-                    <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4">
-                        <path d="M20.9844 10H17M20.9844 10V6M20.9844 10L17.6569 6.34315C14.5327 3.21895 9.46734 3.21895 6.34315 6.34315C3.21895 9.46734 3.21895 14.5327 6.34315 17.6569C9.46734 20.781 14.5327 20.781 17.6569 17.6569C18.4407 16.873 19.0279 15.9669 19.4184 15" 
-                        stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <svg fill="#000000" height="800px" width="800px" version="1.1" id="XMLID_122_" xmlns="http://www.w3.org/2000/svg"  
+                        viewBox="0 0 24 24" enableBackground="new 0 0 24 24" xmlSpace="preserve" class="h-6 w-6">
+                        <g id="upgrade">
+                            <g>
+                                <path d="M12,24C5.4,24,0,18.6,0,12S5.4,0,12,0s12,5.4,12,12S18.6,24,12,24z M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10
+                                    S17.5,2,12,2z M13,18h-2V9.4l-3.3,3.3l-1.4-1.4L12,5.6l5.7,5.7l-1.4,1.4L13,9.4V18z"/>
+                            </g>
+                        </g>
                     </svg>
                 </button>
             </span>

@@ -19,7 +19,7 @@ const ResupplyModal = props => {
     }
     else {
         return(
-            <div class="fixed left-0 top-0 right-0 bottom-0 bg-black/5 z-30" onClick={props.onClose}>
+            <div class="fixed left-0 top-0 right-0 bottom-0 bg-black/5 z-100" onClick={props.onClose}>
                 <div onClick={e=>e.stopPropagation()}
                 class="fixed left-1/4 w-1/2 top-1/4 h-1/2 block rounded-xl border bg-gray-100 border-gray-100 p-8 shadow-xl"
                 >

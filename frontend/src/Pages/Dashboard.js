@@ -12,13 +12,7 @@ import Header from "../Components/Header";
 
 function Dashboard() {
     const tableRef = useRef(null);
-    var currentDate = new Date();
-    var datetime = currentDate.getDate() + "/"
-        + (currentDate.getMonth() + 1) + "/"
-        + currentDate.getFullYear() + " "
-        + currentDate.getHours() + ":"
-        + currentDate.getMinutes() + ":"
-        + currentDate.getSeconds();
+
 
     const items = ["Apple", "Samsung"];
     const [showModal, setShowModal] = useState(false);
@@ -30,8 +24,8 @@ function Dashboard() {
     const [update, setUpdate] = useState(false);
     const [sortBy, setSortBy] = useState("date");
     const devices = useMemo(() => ({
-        "Apple": [["APPLMD211000", "iPhone 13", 0, 0, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], ["APPLMD221000", "iPhone 14", 90000, 0, [53399, 52569, 52310, 49839, 50011, 49344, 49819, 50120, 50964, 50633]]],
-        "Samsung": [["SAMGSMD211000", "Galaxy S21", 10000, 0, [2000, 1000, 2400, 2500, 1200, 5200, 3600, 1100, 2700, 4500]], ["SAMGSMD221000", "Galaxy S22", 12000, 0, [3000, 1000, 2000, 2500, 3200, 5000, 4000, 1000, 2000, 7000]], ["SAMGSMD231000", "Galaxy S23", 50000, 0, [3800, 4800, 5300, 7300, 4300, 2100, 1200, 3300, 4600, 3200]]],
+        "Apple": [["APPLMD211000", "iPhone 13", 0, 0, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], ["APPLMD221000", "iPhone 14", 200000, 0, [53399, 52569, 52310, 49839, 50011, 49344, 49819, 50120, 50964, 50633]]],
+        "Samsung": [["SAMGSMD211000", "Galaxy S21", 10000, 0, [2000, 1000, 2400, 2500, 1200, 5200, 3600, 1100, 2700, 4500]], ["SAMGSMD221000", "Galaxy S22", 12000, 0, [21415, 21419, 21493, 21129, 19258, 10508, 7222, 0, 0, 0]], ["SAMGSMD231000", "Galaxy S23", 50000, 0, [0, 0, 0, 0, 93939, 86524, 71681, 53602, 47661, 43171]]],
         "": []
     }), []);
     const [weeks, setWeeks] = useState(1);
@@ -101,8 +95,8 @@ function Dashboard() {
             <div class="relative bg-gray-100 h-full">
                 <div class="flex flex-row">
                     <div class="flex basis-1/3">
-                        <div id="Inventory" class="fixed top-0 left-0 flex flex-col w-1/4 h-screen  bg-slate-200 items-center">
-                            <h2 class="text-lg bg-slate-100 text-center w-full py-1 mt-4 ">Inventory</h2>
+                        <div id="Inventory" class="fixed top-[76px] left-0 flex flex-col w-1/4 h-full  bg-slate-200 items-center">
+                            <h2 class="text-lg bg-slate-100 text-center w-full mt-4 ">Inventory</h2>
                             {/* <StockGraph /> */}
                             <Choice item={items} setMake={make=>setMake(make)}/>
                             {make === "" ? <span class="h-1 w-64 rounded bg-slate-400 mt-7"/> :
@@ -113,14 +107,14 @@ function Dashboard() {
                                 </>
                             }
                             {make === "" ? null :
-                                <div class="absolute bottom-4 rounded-md px-4 py-2 mt-4 text-base text-gray-700 bg-red-400 ">
+                                <div class="absolute bottom-20 rounded-md px-4 py-2 my-2 text-base text-gray-700 bg-red-400 ">
                                     <p class="text-center">Weeks</p>
                                     <TextboxTwo setChange={c=>setWeeks(c)} name={null}/>
                                 </div>
                             }
                             {shortfall && make !== "" ?
                                 <button
-                                class="absolute bottom-28 rounded-md px-4 py-2 mt-4 text-base text-gray-700 bg-red-400 
+                                class="absolute bottom-44 rounded-md px-4 py-2 mt-4 text-base text-gray-700 bg-red-400 
                                     hover:text-gray-800 hover:bg-rose-300 active:text-gray-900 active:bg-red-400 active:shadow-sm"
                                     onClick={()=>setShowModal(true)}
                                 >
@@ -133,7 +127,7 @@ function Dashboard() {
                             />
                         </div>
                     </div>
-                    <div class="flex basis-2/3 flex-col">
+                    <div class="flex basis-2/3 flex-col mt-20">
                         <DataViz sortByHandler={sortByHandler} tableRef={tableRef}/>
                         <div ref={tableRef}>
                             <Table sortBy={sortBy} />

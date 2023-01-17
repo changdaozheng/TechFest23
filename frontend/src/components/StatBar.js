@@ -1,4 +1,3 @@
-
 import React from "react";
 import fileTray from "../Assets/fileTray.png"
 function StatBar(props) {
@@ -17,7 +16,7 @@ function StatBar(props) {
             <div class="w-full">
                 <div class="flex justify-between">
                     <p class="text-lg font-normal text-gray-900">{props.name}</p>
-                    {props.value[1]===0? <p class="text-red-500 text-lg ">EOL</p>:null}
+                    {(props.value[1]===0 && props.value[0] === 0)? <p class="text-red-500 text-lg ">EOL</p>:null}
                 </div>
                 <p class="text-xs text-gray-500">{props.sku}</p>
                 {shortfall < 0 ? <p class="text-lg font-normal text-red-600">{props.title[0]}: {props.value[0]}</p>

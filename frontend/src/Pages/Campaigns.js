@@ -15,7 +15,7 @@ function Campaigns() {
     return (
         <div class>
             <Header />
-            <div class="m-8 flex flex-row justify-evenly text-3xl">
+            <div class="m-8 flex flex-row justify-evenly text-3xl pt-16">
                 Campaign Intensity Heatmap
             </div>
             <div class="flex flex-row items-center justify-center content-center">

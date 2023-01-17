@@ -172,12 +172,12 @@ function DataViz(props) {
                                         ]}
                                     >
                                         <div id="mini-bubble" class="flex flex-row">
-                                            <div class="w-12 h-12 mr-2 rounded-full border-2 border-red-700 text-center flex flex-col justify-center">
-                                                XX%
+                                            <div class="w-12 h-12 mr-2 rounded-full border-2 border-red-700 text-sm text-center flex flex-col justify-center">
+                                            65.6%
                                             </div>
                                             <div>
                                                 <p>Apple</p>
-                                                <p>XXX,XXX</p>
+                                                <p>3,746,710</p>
                                             </div>
                                         </div>
                                     </ArcherElement>
@@ -196,12 +196,12 @@ function DataViz(props) {
                                         ]}
                                     >
                                         <div id="mini-bubble" class="flex flex-row">
-                                            <div class="w-12 h-12 mr-2 rounded-full border-2 border-red-700 text-center flex flex-col justify-center">
-                                                XX%
+                                            <div class="w-12 h-12 mr-2 rounded-full border-2 border-red-700 text-sm text-center flex flex-col justify-center">
+                                                34.4%
                                             </div>
                                             <div>
                                                 <p>Samsung</p>
-                                                <p>XXX,XXX</p>
+                                                <p>1,968,590</p>
                                             </div>
                                         </div>
                                     </ArcherElement>
@@ -222,12 +222,12 @@ function DataViz(props) {
                                         ]}
                                     >
                                         <div id="mini-bubble" class="flex flex-row">
-                                            <div class="w-12 h-12 mr-2 rounded-full border-2 border-red-700 text-center flex flex-col justify-center">
-                                                XX%
+                                            <div class="w-12 h-12 mr-2 rounded-full border-2 border-red-700 text-sm text-center flex flex-col justify-center">
+                                                37.4%
                                             </div>
                                             <div>
-                                                <p>Apple Iphone 14</p>
-                                                <p>XXX,XXX</p>
+                                                <p>Apple Iphone 13</p>
+                                                <p>2,138,410</p>
                                             </div>
                                         </div>
                                     </ArcherElement>
@@ -246,12 +246,12 @@ function DataViz(props) {
                                         ]}
                                     >
                                         <div id="mini-bubble" class="flex flex-row">
-                                            <div class="w-12 h-12 mr-2 rounded-full border-2 border-red-700 text-center flex flex-col justify-center">
-                                                XX%
+                                            <div class="w-12 h-12 mr-2 rounded-full border-2 border-red-700 text-sm text-center flex flex-col justify-center">
+                                            28.1%
                                             </div>
                                             <div>
-                                                <p>Galaxy S23</p>
-                                                <p>XXX,XXX</p>
+                                                <p>Apple Iphone 14</p>
+                                                <p>1,608,300</p>
                                             </div>
                                         </div>
                                     </ArcherElement>
@@ -270,12 +270,12 @@ function DataViz(props) {
                                         ]}
                                     >
                                         <div id="mini-bubble" class="flex flex-row">
-                                            <div class="w-12 h-12 mr-2 rounded-full border-2 border-red-700 text-center flex flex-col justify-center">
-                                                XX%
+                                            <div class="w-12 h-12 mr-2 rounded-full border-2 border-red-700 text-sm text-center flex flex-col justify-center">
+                                                30.9%
                                             </div>
                                             <div>
                                                 <p>Galaxy S22</p>
-                                                <p>XXX,XXX</p>
+                                                <p>1,768,260</p>
                                             </div>
                                         </div>
                                     </ArcherElement>
