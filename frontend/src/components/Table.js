@@ -1,13 +1,14 @@
 import React, {useState, useEffect, useRef} from "react";
 import Tablehead from "./Tablehead";
 import Tablerow from "./Tablerow";
-//import axios from 'axios';
-import Data from "../Utils/Data"
+import axios from 'axios';
+
 import { CSVLink } from 'react-csv'
 
 export default function Table({sortBy}) {
 
-    const [forecasts, setForecasts] = useState([{}]);
+    const [sorted, setSorted] = useState([{}]);
+    const [data, setData] = useState([{}]);
     const csvLink = useRef()
 
     const headers = [
@@ -25,22 +26,29 @@ export default function Table({sortBy}) {
     ];
 
     useEffect(() => {
-    
-        async function fetchData() {
-            try{
-                // const res = await axios.get("https://TechFest23.changdaozheng.repl.co/forecast");
-                // const data = await res.data;
+        async function fetchData (){
+            const res = await axios.get("https://TechFest23.changdaozheng.repl.co/forecast");
+            const data = await res.data;
+            console.log("READING FROM DB")
+            setData(data);
+            
+        }
+        fetchData();
+    }, [])
 
+    useEffect(() => {
+        async function sortData() {
+            try{
                 switch (sortBy){
                     case "model":
                         console.log("model sort");
-                        Data.sort((a,b)=>{
+                        data.sort((a,b)=>{
                             return a.device_name.localeCompare(b.device_name)
                         })
                         break;
                     case "date":
                         console.log("date sort");
-                        Data.sort((a,b)=>{
+                        data.sort((a,b)=>{
                             const dateA = new Date(a.start_date).getTime();
                             const dateB = new Date(b.start_date).getTime();
                             return dateA-dateB
@@ -48,22 +56,20 @@ export default function Table({sortBy}) {
                         break;
                     case "company":
                         console.log("company sort");
-                        Data.sort((a,b)=>{
+                        data.sort((a,b)=>{
                             return a.make.localeCompare(b.make)
                         })
                         break;
                     default:
                 }
-
-
-                setForecasts(Data);
+                setSorted(data);
                 
             } catch (e) {
                 console.log(e);
             }
         }
-        fetchData();
-    },[sortBy])
+        sortData();
+    },[sortBy, data])
 
     const downloadHandler = () => {
         csvLink.current.link.click()
@@ -73,7 +79,7 @@ export default function Table({sortBy}) {
         <div className="flex flex-col my-20">
             <div className="download-button flex-row my-4 mr-4 ml-auto ">
                 <button type="button" onClick={downloadHandler} className="flex-end py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Download as CSV</button>
-                <CSVLink headers={headers} data={forecasts} filename='sales_data.csv' className='hidden' ref={csvLink} target='_blank'/>
+                <CSVLink headers={headers} data={sorted} filename='sales_data.csv' className='hidden' ref={csvLink} target='_blank'/>
 
             </div>
             <div className="flex flex-col h-[500px]">
@@ -83,7 +89,7 @@ export default function Table({sortBy}) {
                             <table className="min-w-full divide-y divide-gray-200 border-collapse">
                                 <Tablehead />
                                 <tbody className="divide-y divide-gray-200 ">
-                                    {forecasts.map(item => (
+                                    {sorted.map(item => (
                                         <Tablerow key={item.id} item={item}/>
                                         ))}
                                 </tbody>
