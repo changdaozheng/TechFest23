@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import Header from "../Components/Header";
 import axios from "axios"
 
@@ -43,21 +43,28 @@ function MLPage() {
             offer:offer,
             week_to_eol:weekEol
         })
-        try{
-            const response = await axios.post("https://SYDMTechFest23.ranchu2000.repl.co/predict", data);
-            setRes(response); 
-        } catch (e) {
-            console.log(e);
-        } finally {
-            console.log(res)
-        }
-
     }
 
+    // const firstUpdate = useRef(true);
+
     useEffect(()=>{
-        if (data.isApple!==-1&&data.week_of_interest!==""&&data.week_to_launch!=="" && data.offer!==-1 && data.week_to_eol!==""){
-            console.log(data)
+
+        async function fetch(){
+            if (data.isApple!==-1&&data.week_of_interest!==""&&data.week_to_launch!=="" && data.offer!==-1 && data.week_to_eol!==""){
+                console.log(data)
+            
+            try{
+                const response = await axios.post("https://SYDMTechFest23.ranchu2000.repl.co/predict", data);
+                setRes(response); 
+                console.log("triggered");
+            } catch (e) {
+                console.log(e);
+            } finally {
+                console.log(res)
+            }}
         }
+        fetch();
+        
     }, [data])
 
     return(
@@ -67,7 +74,7 @@ function MLPage() {
                 <form class="flex flex-col bg-red-200 h-full items-center p-4" >
 
                     <label>isApple</label>
-                    <input class="w-32 mb-2" type="number" value={isApple} onChange={appleHandler}/>
+                    <input class="w-32 mb-2" type="number" value={isApple} placeholder={isApple} onChange={appleHandler}/>
                     <label>Week of Interest</label>
                     <input class="w-32 mb-2" value={weekInterest} onChange={weekInterestHandler}/>
                     <label>Weeks to Launch</label>
@@ -79,7 +86,7 @@ function MLPage() {
                     <button type="submit" onClick={submitHandler} class="rounded-full px-2 py-1 text-white bg-red-400 hover:bg-red-500">Submit</button>
                     
                     <div className="m-6">
-                         {res === "" ? "" : <p> Forecasted Demand : {res.output}</p>}
+                         {res === "" ? "" : <p> Forecasted Demand : {res.data.output}</p>}
                     </div>
 
                 </form>

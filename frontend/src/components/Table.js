@@ -2,7 +2,7 @@ import React, {useState, useEffect, useRef} from "react";
 import Tablehead from "./Tablehead";
 import Tablerow from "./Tablerow";
 import axios from 'axios';
-
+import JSONdata from "../Utils/Data"
 import { CSVLink } from 'react-csv'
 
 export default function Table({sortBy}) {
@@ -27,10 +27,10 @@ export default function Table({sortBy}) {
 
     useEffect(() => {
         async function fetchData (){
-            const res = await axios.get("https://TechFest23.changdaozheng.repl.co/forecast");
-            const data = await res.data;
-            console.log("READING FROM DB")
-            setData(data);
+            // const res = await axios.get("https://TechFest23.changdaozheng.repl.co/forecast");
+            // const data = await res.data;
+            // console.log("READING FROM DB")
+            setData(JSONdata);
             
         }
         fetchData();

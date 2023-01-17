@@ -76,6 +76,7 @@ function Datalogger() {
             week:week,
             start_date:startDate
         })
+
     }
 
     useEffect(()=>{
