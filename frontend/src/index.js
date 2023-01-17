@@ -9,13 +9,13 @@ import Dashboard from "./Pages/Dashboard";
 import Campaigns from './Pages/Campaigns';
 import Datalogger from "./Pages/Datalogger"
 import MLPage from './Pages/MLPage';
-
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Table from './Components/Table';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  
   <BrowserRouter>
       <Routes>
         <Route path='/*' element={<Dashboard />} />
@@ -24,6 +24,7 @@ root.render(
         <Route path='/MLPage/*' element={<MLPage />} />
       </Routes>
   </BrowserRouter>
+
 );
 
 // If you want to start measuring performance in your app, pass a function
