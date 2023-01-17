@@ -34,7 +34,6 @@ function MLPage() {
     }
 
     const submitHandler = async (event) =>{
-        // console.log(make,device,demand,week,startDate)
         event.preventDefault();
         setData({
             isApple:isApple,
@@ -45,7 +44,6 @@ function MLPage() {
         })
     }
 
-    // const firstUpdate = useRef(true);
 
     useEffect(()=>{
 

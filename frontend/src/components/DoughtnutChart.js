@@ -1,5 +1,4 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import { Doughnut } from 'react-chartjs-2';
 import { Chart, registerables } from 'chart.js';
 
@@ -7,11 +6,6 @@ Chart.register(...registerables);
 
 function DoughnutChart() {
     const data = {
-        // labels: [
-        //     'Red',
-        //     'Blue',
-        //     'Yellow'
-        // ],
         datasets: [{
             label: 'Satisfaction',
             data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -69,7 +63,6 @@ function DoughnutChart() {
     }]
 
     // to reference jx's hook
-
     return (
         <Doughnut
             type="doughnut"

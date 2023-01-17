@@ -1,25 +1,28 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
+import React, { useState } from "react";
 import Header from '../Components/Header';
 import CalendarHeatmap from 'react-calendar-heatmap';
 import NewCampaign from "../Modals/NewCampaign";
 import '../Assets/react-calendar-heatmap.css';
 
 function Campaigns() {
+    
     const [showModal, setShowModal] = useState(false);
     const [make, setMake] = useState("");
     const [shortfallArr, setShortfallArr] = useState([]); // for rendering 
     const [stockChange, setStockChange] = useState(["", 0]);
 
+   
+
 
 
     return (
-        <div class>
+        <div>
             <Header />
-            <div class="m-8 flex flex-row justify-evenly text-3xl pt-16">
+            <div className="m-8 flex flex-row justify-evenly text-3xl pt-16">
                 Campaign Intensity Heatmap
             </div>
-            <div class="flex flex-row items-center justify-center content-center">
-                <div class="w-3/4">
+            <div className="flex flex-row items-center justify-center content-center">
+                <div className="w-3/4">
                     <CalendarHeatmap
                         startDate={new Date('2022-01-15')}
                         endDate={new Date('2023-01-21')}
@@ -408,9 +411,9 @@ function Campaigns() {
                     />
                 </div>
             </div>
-            <div class="mt-12 flex flex-row justify-evenly">
+            <div className="mt-12 flex flex-row justify-evenly">
                 <button
-                    class="inline-block rounded-md px-4 py-2 mt-4 text-base text-white bg-red-400 hover:text-gray-800 hover:bg-rose-300 active:text-gray-900 active:bg-red-400 active:shadow-sm"
+                    className="inline-block rounded-md px-4 py-2 mt-4 text-base text-white bg-red-400 hover:text-gray-800 hover:bg-rose-300 active:text-gray-900 active:bg-red-400 active:shadow-sm"
                     onClick={() => setShowModal(true)}
                 >
                     Create New Campaign

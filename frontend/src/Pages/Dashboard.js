@@ -1,14 +1,11 @@
 import React, { useState, useEffect, useMemo, useCallback, useRef } from "react";
+import ResupplyModal from "../Modals/ResupplyModal";
+import Table from "../Components/Table";
+import Header from "../Components/Header";
 import Choice from "../Components/Choice";
 import StatBar from "../Components/StatBar";
-import ResupplyModal from "../Modals/ResupplyModal";
 import DataViz from "../Components/DataViz";
 import { TextboxTwo } from "../Components/Textbox";
-// import StockGraph from "../Components/StockGraph";
-// import { Link } from "react-router-dom";
-import Table from "../Components/Table";
-// import DoughnutChart from "../Components/DoughtnutChart";
-import Header from "../Components/Header";
 
 function Dashboard() {
     const tableRef = useRef(null);
@@ -97,7 +94,6 @@ function Dashboard() {
                     <div class="flex basis-1/3">
                         <div id="Inventory" class="fixed top-[76px] left-0 flex flex-col w-1/4 h-full  bg-slate-200 items-center">
                             <h2 class="text-lg bg-slate-100 text-center w-full mt-4 ">Inventory</h2>
-                            {/* <StockGraph /> */}
                             <Choice item={items} setMake={make=>setMake(make)}/>
                             {make === "" ? <span class="h-1 w-64 rounded bg-slate-400 mt-7"/> :
                                 <>

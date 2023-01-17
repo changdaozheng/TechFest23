@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import fileTray from "../Assets/fileTray.png"
-import { Textbox, TextboxThree } from "../Components/Textbox";
 
 const NewCampaign = props => {
 
@@ -30,7 +29,6 @@ const NewCampaign = props => {
     }
 
     const submitHandler = (event) => {
-        // console.log(make,device,demand,week,startDate)
         setData({
             maker: maker,
             offerDays: offerDays,

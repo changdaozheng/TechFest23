@@ -68,7 +68,6 @@ function Datalogger() {
     }
 
     const submitHandler = (event) =>{
-        // console.log(make,device,demand,week,startDate)
         setData({
             make:make,
             device:device,

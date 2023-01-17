@@ -1,5 +1,6 @@
 import React from "react";
 import fileTray from "../Assets/fileTray.png"
+
 function StatBar(props) {
     let shortfall = props.value[0] - props.value[1];
     if (shortfall < 0){
