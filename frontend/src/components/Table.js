@@ -28,8 +28,10 @@ export default function Table({sortBy}) {
     useEffect(() => {
         async function fetchData (){
             const res = await axios.get("https://TechFest23.changdaozheng.repl.co/forecast");
-            const data = await res.data;
+            const dbData = await res.data;
+
             console.log("READING FROM DB");
+            setData(dbData);
         }
         fetchData();
     }, [])
